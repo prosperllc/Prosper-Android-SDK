@@ -1,0 +1,87 @@
+<!--Copyright 2015, Prosper Funding, LLC, All Right Reserved.-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sdk_title"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-regular"
+        android:layout_marginTop="16dp"
+        android:textSize="28sp"
+        android:alpha="0.50"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/heading1"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="24dp"
+        android:textSize="16sp"
+        android:alpha="0.50"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sdk_info_happy_path"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="24dp"
+        android:textSize="16sp"
+        android:alpha="0.50"/>
+
+
+    <Button
+        android:id="@+id/getOffers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/btnColor"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="24dp"
+        android:text="@string/get_offers" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sdk_info_collect_info_path"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="24dp"
+        android:textSize="16sp"
+        android:alpha="0.50"/>
+
+
+    <Button
+        android:id="@+id/bankFlow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/btnColor"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="24dp"
+        android:text="@string/collect_info" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sdk_info_contd"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="36dp"
+        android:textSize="14sp"
+        android:alpha="0.50"/>
+
+
+
+
+
+
+</LinearLayout>

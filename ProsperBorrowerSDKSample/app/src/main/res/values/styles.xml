@@ -1,0 +1,23 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#F37F21</item>
+        <item name="colorPrimaryDark">#DB731E</item>
+        <item name="colorAccent">#9E9E9E</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="OffersTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
+
+    <style name="Prosper.AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/prosperPrimaryColor</item>
+        <!--#21409A-->
+        <item name="colorPrimaryDark">@color/prosperPrimaryColorDark</item>
+        <!--#233483-->
+        <item name="colorAccent">@color/prosperAccentColor</item>
+        <!--#3DCD4B-->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>
+

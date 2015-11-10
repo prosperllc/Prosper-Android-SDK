@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ProsperBorrowerSDKSample</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_offers">OffersActivity</string>
+    <string name="sdk_title">Prosper Android SDK</string>
+    <string name="heading1">Let your consumers apply for a loan through Prosper from your app.</string>
+    <string name="sdk_info_happy_path"><b>Option 1:</b> Pass user data to Prosper to present  personalized loan offers within your app.</string>
+    <string name="sdk_info_collect_info_path"><b>Option 2:</b> If you do not want to collect user data to generate offers, allow the SDK  to collect user data and display personalized offers.</string>
+    <string name="sdk_info_contd">To learn more, refer to the Prosper SDK documentation.</string>
+    <string name="get_offers">Your App Collects Info</string>
+    <string name="collect_info">SDK Collects Info</string>
+</resources>

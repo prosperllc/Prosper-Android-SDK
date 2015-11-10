@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+def versionMajor = 1
+def versionMinor = 0
+def versionPatch = 0
+def versionBuild = 352 // bump for dogfood builds, public betas, etc.
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+    }
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.prosper.prosperborrowersdksample"
+        minSdkVersion 11
+        targetSdkVersion 23
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+        versionName "${versionMajor}.${versionMinor}.${versionBuild}"
+        buildConfigField "String", "PROSPER_CLIENT_ID", "\"obtainFromProsper\""
+        buildConfigField "String", "PROSPER_CLIENT_SECRET", "\"obtainFromProsper\""
+        buildConfigField "String", "PROSPER_REF_AC", "\"obtainFromProsper\""
+        buildConfigField "String", "PROSPER_REF_MC", "\"obtainFromProsper\""
+        resValue "string", "google_api_name", "com.google.android.geo.API_KEY"
+        resValue "string", "google_api_key", "obtainFromGoogle"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                output.outputFile = file("$project.buildDir/outputs/apk/ProsperBorrowerSDKSample.apk")
+            }
+        }
+        debug {
+            minifyEnabled false
+        }
+
+        release {
+            zipAlignEnabled true
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+dependencies {
+    compile 'com.google.android.gms:play-services-location:7.5.0'
+    compile('com.prosper.widget:borrowerwidget:1.0@aar') {
+        transitive = true;
+    }
+
+}
