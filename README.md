@@ -35,7 +35,7 @@ The last two keys associate your app as the referring partner when we generate a
 
 3. Test your integration on the Prosper Sandbox environment.
   
-  The keys you received in step 1 above work on the Prosper Sandbox environment. All of your initial testing will happen on our Sandbox environment, which is a mirror of our Production environement.   
+  The keys you received in step 1 above work on the Prosper Sandbox environment. All of your initial testing will happen on our Sandbox environment, which is a mirror of our Production environment.   
   
   When everything is working well end to end, drop us another email with a request for Production keys to go live! This new set of keys are configured to work on the Prosper Production environment. Again, these keys will work for both the Android and iOS versions of the Prosper Borrower SDK.
 
@@ -50,23 +50,23 @@ The last two keys associate your app as the referring partner when we generate a
 
 The diagram below shows the flow between your app and the Prosper Borrower SDK throughout the loan offer and application process. In this flow, your app does not collect user information required to generate loan offers through Prosper. Instead, your app launches the Borrower SDK, leaving user information collection and loan offer display and selection to the Prosper Borrower SDK.
 
-![User flow diagram for when the SDK collects user information](https://github.com/prosperllc/mobile-wiki/blob/master/android-borrower-sdk/doc-images/ProsperBorrowerSDKFlowDiagramNoOfferInfo.png)
+![User flow diagram for when the SDK collects user information](https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/ProsperBorrowerSDKFlowDiagramNoOfferInfo.png)
 
 
 ## User flow two: Your app collects user information
 The diagram below shows the flow between your app and the Prosper Borrower SDK throughout the loan offer and application process. In this flow, your app collects user information required to generate loan offers through Prosper. You pass this user information to the Prosper Borrower SDK. Prosper generates a list of personalized loan offers you can present to the user. You then launch the Borrower SDK when the user selects from the list of personalized loan offers. 
 
-![User flow diagram for when your app collects user information](https://github.com/prosperllc/mobile-wiki/blob/master/android-borrower-sdk/doc-images/ProsperBorrowerSDKFlowDiagramNoComp.png)
+![User flow diagram for when your app collects user information](https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/ProsperBorrowerSDKFlowDiagramNoComp.png)
 
 # Consumer experience in your app with the Prosper SDK
 
 The following screenshots show the flow of the Prosper Borrower SDK on Android. The first image represents a partner app displaying a list of personalized loan offers to a customer. Once the customer selects a loan offer, your app launches the Prosper Borrower SDK, allowing the customer to complete the loan application.
 
-![Prosper Borrower SDK for Android screenshots](https://github.com/prosperllc/mobile-wiki/blob/master/android-borrower-sdk/doc-images/AndroidScreenshots.png)
+![Prosper Borrower SDK for Android screenshots](https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/AndroidScreenshots.png)
 
 Here's the Prosper Borrower SDK in action on the Android platform.
 
-![Demo] (https://github.com/prosperllc/mobile-wiki/blob/master/android-borrower-sdk/doc-images/android.gif)
+![Demo] (https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/android.gif)
 
 
 # Installing the Prosper Borrower SDK and configuring your project
