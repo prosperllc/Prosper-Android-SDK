@@ -3,7 +3,7 @@
 The Prosper Borrower SDK is a native SDK that allows your users to apply for a loan within your app in a seamless and convenient way.
 
 
-With the Prosper Borrower SDK, you can refer your customers to receive loan offers through Prosper. After receiving the loan offer, the customer can select that offer, create a Prosper account, and complete a loan application immediately. After the loan application has been completed, Prosper initiates loan verification and generates a loan listing for funding by Prosper investors. 
+With the Prosper Borrower SDK, you can refer your users to receive loan offers through Prosper. After receiving the loan offers, the customer can select that offer, create a Prosper account, and complete a loan application immediately. After the loan application has been completed, Prosper initiates loan verification and generates a loan listing for funding by Prosper investors. 
 
 # Prosper Borrower SDK requirements
 The Prosper Borrower SDK supports Android 3.0 API level 11 and higher versions. 
@@ -17,25 +17,25 @@ This release contains the following:
 
 
 ## Before you get started...
-There's just a couple of things you need to do before you can go live with the Prosper Borrower SDK. It's not much, but it'll make your experience easier.
+There are just a couple of things you need to do before you can go live with the Prosper Borrower SDK. It's not much, but it'll make your experience easier.
 
 1. Get client keys from Prosper.
   Just contact us at mobileSDK@prosper.com and request keys for testing the SDK with your app.
 
   We'll reply shortly with the following keys, that you'll need when integrating and testing the SDK with your app. The keys work on both the Android and iOS versions of the Prosper Borrower SDK.
-   *  Client_Id
+   *	Client_Id
    *  Client_Secret
    *  Ref_AC
    *  Ref_MC
 
   The first two keys are tied to your app when making API calls. They are used to authenticate your app. 
-The last two keys associate your app as the referring partner when we generate a Prosper loan listing. Without these keys, you won't get very far. We'll tell you where to set them a little later in this guide.
+The last two keys associate your app as the referring partner when we generate a Prosper loan listing. Without these keys, you won't get very far. We'll show you where to set them a little later in this guide.
 
 2. Follow the instructions for installing and integrating the SDK in this guide. 
 
 3. Test your integration on the Prosper Sandbox environment.
   
-  The keys you received in step 1 above work on the Prosper Sandbox environment. All of your initial testing will happen on our Sandbox environment, which is a mirror of our Production environment.   
+  The keys you received in step 1 above work on the Prosper Sandbox environment. All of your initial testing will happen on our Sandbox environment, which is a mirror of our Production environement.   
   
   When everything is working well end to end, drop us another email with a request for Production keys to go live! This new set of keys are configured to work on the Prosper Production environment. Again, these keys will work for both the Android and iOS versions of the Prosper Borrower SDK.
 
@@ -46,21 +46,22 @@ The last two keys associate your app as the referring partner when we generate a
 
 # SDK User Flows
 
-## User flow one: Prosper Borrower SDK collects user information
+## User flow one: Prosper Borrower SDK displays loan offers after collecting user info   
+The diagram below shows the flow between your app and the Prosper Borrower SDK throughout the loan offer and application process. In this flow, your app does not collect the user information required to generate loan offers through Prosper. Instead, your app launches the Borrower SDK, leaving user information collection and loan offer display and selection to the Prosper Borrower SDK. 
 
-The diagram below shows the flow between your app and the Prosper Borrower SDK throughout the loan offer and application process. In this flow, your app does not collect user information required to generate loan offers through Prosper. Instead, your app launches the Borrower SDK, leaving user information collection and loan offer display and selection to the Prosper Borrower SDK.
+Note: in this flow, you may have some information about the user that you can send to Prosper, but you may not have all required information to generate offers and display them within your app.
 
-![User flow diagram for when the SDK collects user information](https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/ProsperBorrowerSDKFlowDiagramNoOfferInfo.png)
+![User flow diagram for when the Prosper Borrower SDK collects user information](https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/ProsperBorrowerSDKFlowDiagramIncompleteOfferInfo.png)
 
 
-## User flow two: Your app collects user information
-The diagram below shows the flow between your app and the Prosper Borrower SDK throughout the loan offer and application process. In this flow, your app collects user information required to generate loan offers through Prosper. You pass this user information to the Prosper Borrower SDK. Prosper generates a list of personalized loan offers you can present to the user. You then launch the Borrower SDK when the user selects from the list of personalized loan offers. 
+## User flow two: Your app collects user information and displays loan offers
+The diagram below shows the flow between your app and the Prosper Borrower SDK throughout the loan offer and application process. In this flow, your app collects user information required to generate loan offers through Prosper. You pass this user information to the Prosper Borrower SDK. Prosper generates a list of personalized loan offers you can present to the user. You then launch the Borrower SDK when the user selects from the list of personalized loan offers.
 
-![User flow diagram for when your app collects user information](https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/ProsperBorrowerSDKFlowDiagramNoComp.png)
+![User flow diagram for when your app collects user information](https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/ProsperBorrowerSDKFlowDiagramCompleteOffer.png)
 
 # Consumer experience in your app with the Prosper SDK
 
-The following screenshots show the flow of the Prosper Borrower SDK on Android. The first image represents a partner app displaying a list of personalized loan offers to a customer. Once the customer selects a loan offer, your app launches the Prosper Borrower SDK, allowing the customer to complete the loan application.
+The following screenshots show the flow of the Prosper Borrower SDK on Android. The first image represents an app displaying a list of personalized loan offers to a customer. Once the customer selects a loan offer, your app launches the Prosper Borrower SDK, allowing the customer to complete the loan application.
 
 ![Prosper Borrower SDK for Android screenshots](https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/AndroidScreenshots.png)
 
@@ -73,22 +74,22 @@ Here's the Prosper Borrower SDK in action on the Android platform.
 
 **To include the Prosper Borrower SDK in your project:**
 
-1.  Download the ProsperBorrowerAndroidSDK library, unzip and place the “prosper” directory in your local Maven repository in the file system path at $HOME/.m2/com/ repository.
+1.	Download the ProsperBorrowerAndroidSDK library, unzip and place the “prosper” directory in your local Maven repository in the file system path at $HOME/.m2/com/ repository.
 
   If you do not already have a local maven repository, you can create a new .m2 repository and place the “prosper” directory within .m2/com/ .
 
-2.  Modify your project’s build.gradle file to include local Maven repositories by adding the following lines:
+2.	Modify your project’s build.gradle file to include local Maven repositories by adding the following lines:
 
     ```
    repositories {     
      mavenLocal()
    }
   ```
-3.  Add client keys provided by Prosper to your app’s build.gradle file.     
+3.	Add client keys provided by Prosper to your app’s build.gradle file.     
 
   When invoked, the Prosper Borrower SDK will use these keys to authenticate your client. These keys also associate your client as the referring partner when we generate a Prosper loan listing.
   
-   *  Client_Id
+   *	Client_Id
    *  Client_Secret
    *  Ref_AC
    *  Ref_MC
@@ -119,17 +120,17 @@ Here's the Prosper Borrower SDK in action on the Android platform.
    }  
    ```
 
-4.  Add the following dependencies to your project’s build.gradle file: 
+4.	Add the following dependencies to your project’s build.gradle file: 
 
-  ```
+ ```
   dependencies { 
-     compile (name: 'com.prosper.widget:borrowerwidget:1.0@aar') {        
+     compile (name: 'com.prosper.widget:borrowerwidget:1.0.1@aar') {        
      transitive = true;     
     }  
  }   
   ```
 
-5.  Add required Prosper Borrower SDK permissions within your manifest file:
+5.	Add required Prosper Borrower SDK permissions within your manifest file:
 
   ```
    <uses-permission android:name="android.permission.INTERNET" />
@@ -137,13 +138,13 @@ Here's the Prosper Borrower SDK in action on the Android platform.
    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   ```
 
-6.  Define the ProsperActivity class in your manifest file:
+6.	Define the ProsperActivity class in your manifest file:
 
   ```
    <activity android:name="com.prosper.widget.ui.ProsperActivity" android:label="Prosper" android:theme="@style/Prosper.AppTheme" tools:replace="theme" />
   ```
 
-7.  Add the Prosper.AppTheme to your style.xml file:
+7.	Add the Prosper.AppTheme to your style.xml file:
 
   ```
   <style name = "Prosper.AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
@@ -152,7 +153,7 @@ Here's the Prosper Borrower SDK in action on the Android platform.
    <item name="colorAccent">@color/prosperAccentColor</item>
    <item name="android.windowContentOverlay">@null</item></style>
   ```
-8.  Perform a gradle sync in your project to pick up your gradle.build file updates.
+8.	Perform a gradle sync in your project to pick up your gradle.build file updates.
 
 ##Configure ProGuard for Prosper Borrower SDK files
 If you are using the ProGuard tool for optimization and obfuscation of your project, you must update the ProGuard configuration with rules to ensure Prosper Borrower SDK classes are handled correctly.
@@ -202,9 +203,13 @@ Initialize the Prosper Borrower SDK in your Application.OnCreate() method.
         });
 ```
 
-#Get Prosper loan offers for a user
+# Collecting user details for Prosper loan offers
 
-To generate personalized loan offers for a user, Prosper requires 13 pieces of information about the loan applicant: 
+To generate personalized loan offers for a user, Prosper requires 13 pieces of information about the loan applicant. 
+
+We'll show you how to send this information to the SDK a bit later, but this list can help you decide whether you want to collect this information from your app, or let the SDK collect the information. Even if you have a small subset of this information, it may help to pass it to the SDK to speed the loan application process. 
+
+User info required to generate loan offers:  
  * Loan Amount
  * Loan Purpose
  * Self-Reported Credit Score
@@ -218,15 +223,29 @@ To generate personalized loan offers for a user, Prosper requires 13 pieces of i
  * Zip
  * Employment Status
  * Annual Income
+ 
+To speed up the creation of a loan listing, Prosper can also accept additional information about the loan applicant:
+ * Primary phone number
+ * Secondary phone number
+ * Employer name
+ * Employer phone number
+ * Employer start date
+ * Occupation type
+ * Social security number
+ * Bank account number
+ * Bank routing number
 
 ##Select the user flow that best matches your development needs.
 
 There are two user flows to choose from, described previously:
- * Prosper Borrower SDK collects user information – You either cannot or do not want to collect the above information from users within your app. You are OK with relinquishing control to the Prosper Borrower SDK for collecting this information, and displaying the personalized loan offers to the user. 
+
+ * **Prosper Borrower SDK displays loan offers after collecting borrower info** – You either cannot or do not want to collect the 13 required pieces of information from users within your app. You are OK with relinquishing control to the Prosper Borrower SDK for collecting this information, and displaying the personalized loan offers to the user.  
 
   In this case, you will initialize the Prosper Borrower SDK, calling the static method ProsperIntent.getCollectUserInfoIntent(context) . The Prosper Borrower SDK takes care of the rest.
+  
+  **Note:** If your app has collected a subset of the 13 required fields (or additional fields), you can pass them to the SDK, and the SDK will collect any missing information. 
 
- * Your app collects user information – You may want to have tight control over how (and how many) loan offers are presented to your users. Prosper provides the ProspectOffersService API to get a list of personalized loan offers you can present to your users. 
+ * **Your app collects user information and displays loan offers** – You may want to have tight control over how (and how many) loan offers are presented to your users. Prosper provides the ProspectOffersService API to get a list of personalized loan offers you can present to your users. 
 
   In this case, you will collect the information above, construct a PMIBorrowerInfo object with this information, and pass the object in a call to the ProspectOffersService API. You can then display one or more personalized loan offers returned by the API within your app. When a user selects the offer, you will launch the SDK with that selected loan offer. The Prosper Borrower SDK will take care of the rest.
 
@@ -236,8 +255,12 @@ There are two user flows to choose from, described previously:
 
 
 
-##Prosper Borrower SDK collects user information
-If you cannot or do not want to collect the 13 pieces of user information to generate Prosper loan offers, you can launch the Borrower SDK, allowing Prosper to collect this information, and present the loan offers to the user.
+## Prosper Borrower SDK displays loan offers after collecting user info
+If you cannot or do not want to collect the 13 pieces of user information to generate Prosper loan offers, you can launch the Borrower SDK, allowing Prosper to collect this information and present the loan offers to the user.
+
+**Passing no user information fields**
+
+The following example shows the first case, where you are passing no borrower info fields to the SDK.
 
 Just invoke the Prosper Borrower SDK registering an intent, passing a null value for borrowerInfo, and 0 for the userSelectedOffer.
 
@@ -246,7 +269,60 @@ Intent prosperIntent = ProsperIntent.getCollectUserInfoIntent(MainActivity.this)
 startActivityForResult(prosperIntent, ProsperActivity.LOAN_APPLICATION_REQUEST);
 ```
 
+
 The Prosper Borrower SDK will then take control, guiding the user through several screens, collecting the 13 pieces of information, requesting that the user create a Prosper account, and presenting a set of pre-approved personalized loan offers the user can select from. 
+
+
+**Passing some user information fields**
+In the case where you are passing some of the 13 user info fields (and possibly some additional fields), you will initialize the SDK passing a PMIBorrowerInfo object to the getPartialUserInfoProvidedIntent intent.
+
+
+Once you collect this information from your user, you construct a PMIBorrowerInfo object for the loan applicant.
+
+```
+PMIBorrowerInfo borrowerInfo = new PMIBorrowerInfo.PMIBorrowerBuilder()
+   // Full object with required 13 fields shown. 
+   // In your case, only some of the required user info fields collected
+   .setLoanAmount(20000)
+   .setLoanPurpose(ProsperConfig.LoanPurpose.HOME_IMPROVEMENT)
+   .setCreditScore(760)
+   .setEmploymentStatusId(ProsperConfig.EmploymentStatusId.EMPLOYED)
+   .setAnnualIncome(75000)
+   .setEmail("user@somedomain.com")
+   .setFirstName("Maryann")
+   .setLastName("Helmann")
+   .setAddress1("912 PINELAND AVE APT 33")
+   .setCity("Hinesville")
+   .setState("GA")
+   .setZip("31313")
+   .setDateOfBirth("03/22/1984")
+   .build();
+   // You can also add ten additional pieces of information to the PMIBorrowerInfo object
+   .setPrimaryPhone("4085550175")
+   .setSecondaryPhone("4085550235")
+   .setEmployerName("ACME") 
+   .setEmployerPhone("4085550199")
+   .setWorkPhone("4085550100")
+   .setEmploymentStart("04/2010")
+   .setOccupation(ProsperConfig.Occupation.PILOT_PRIVATE_OR_COMMERCIAL)
+   .setSsn("123456789")
+   .setAccountNumber("32423435345435")
+   .setRoutingNumber("121000248")
+```
+
+**Note:** For a full list of values that can be entered for LoanPurpose and EmploymentStatus and Occupation, refer to the ProsperConfig.java file bundled with the Prosper Borrower SDK.
+
+
+Next you pass the PMIBorrowerInfo object to the getPartialUserInfoProvidedIntent intent:
+
+```
+Intent prosperIntent = ProsperIntent.getPartialUserInfoProvidedIntent(MainActivity.this, borrowerInfo);
+startActivityForResult(prosperIntent, ProsperActivity.LOAN_APPLICATION_REQUEST);
+```
+
+
+
+
 
 ###User selects and completes the Prosper loan offer
 Pre-approved loan offers generated by the Prosper Borrower SDK require user consent and user acceptance of the Prosper Marketplace Terms and Conditions for the loan to become an active listing for funding. 
@@ -259,12 +335,14 @@ Once the loan offer is selected, the Prosper Borrower SDK guides the user throug
 
 
 
-##Your app collects user information
+## Your app collects user information and displays loan offers
 The Prosper Borrower SDK provides an API to get a list of personalized loan offers for your users. Getting a list of loan offers is a two-step process.
 
 ###Step 1: Collect loan applicant information
 
 To generate the loan offers, Prosper requires 13 pieces of user information about the loan applicant:
+
+User info required to generate loan offers:  
  * Loan Amount
  * Loan Purpose
  * Self-Reported Credit Score
@@ -278,55 +356,82 @@ To generate the loan offers, Prosper requires 13 pieces of user information abou
  * Zip
  * Employment Status
  * Annual Income
+ 
+To speed up the creation of a loan listing, Prosper can also accept additional information about the loan applicant:
+ * Primary phone number
+ * Secondary phone number
+ * Employer name
+ * Employer phone number
+ * Employer start date
+ * Occupation type
+ * Social security number
+ * Bank account number
+ * Bank routing number
+
 
 Once you collect this information from your user, you construct a PMIBorrowerInfo object for the loan applicant. 
 
 ```
 PMIBorrowerInfo borrowerInfo = new PMIBorrowerInfo.PMIBorrowerBuilder()
+   // Full object with required 13 fields shown.
    .setLoanAmount(20000)
-   .setLoanPurpose(ProsperConfig.LoanPurpose.DEBT_CONSOLIDATION)
+   .setLoanPurpose(ProsperConfig.LoanPurpose.HOME_IMPROVEMENT)
    .setCreditScore(760)
    .setEmploymentStatusId(ProsperConfig.EmploymentStatusId.EMPLOYED)
-   .setAnnualIncome(95000)
-   .setEmail("user@gmail.com")
-   .setFirstName("Walter")
-   .setLastName("White")
-   .setAddress1("3828 Piermont Dr ")
-   .setCity("Albuquerque")
-   .setState("NM")
-   .setZip("87112")
-   .setDateOfBirth("09/07/1969")
+   .setAnnualIncome(75000)
+   .setEmail("user@somedomain.com")
+   .setFirstName("Maryann")
+   .setLastName("Helmann")
+   .setAddress1("912 PINELAND AVE APT 33")
+   .setCity("Hinesville")
+   .setState("GA")
+   .setZip("31313")
+   .setDateOfBirth("03/22/1984")
    .build();
+   // You can also add ten additional pieces of information to the PMIBorrowerInfo object
+   .setPrimaryPhone("4085550175")
+   .setSecondaryPhone("4085550235")
+   .setEmployerName("ACME") 
+   .setEmployerPhone("4085550199")
+   .setWorkPhone("4085550100")
+   .setEmploymentStart("04/2010")
+   .setOccupation(ProsperConfig.Occupation.PILOT_PRIVATE_OR_COMMERCIAL)
+   .setSsn("123456789")
+   .setAccountNumber("32423435345435")
+   .setRoutingNumber("121000248")
 ```
-**Note:** For a full list of values that can be entered for LoanPurpose and EmploymentStatus, refer to the ProsperConfig.java file bundled with the Prosper Borrower SDK.
+**Note:** For a full list of values that can be entered for LoanPurpose, EmploymentStatus and Occupation, refer to the ProsperConfig.java file bundled with the Prosper Borrower SDK.
 
 ###Step 2: Call the ProspectOffersService to get loan offers
 
 ```
-   ProspectOffersService.getInstance().getoffers(borrowerInfo, new ProsperConfig.OffersCallback() {
-      @Override
-      public void success(PMIListedOffers offers) {
+ProspectOffersService.getInstance().getOffers(borrowerInfo, new ProsperConfig.OffersCallback() {
+        @Override
+        public void success(PMIListedOffers offers) {
         Log.d(TAG, "Got offers");
-      }
 
-      @Override
-      public void failure(String s) {
-            Log.d(TAG, "Failed to get offers");
+        @Override
+        public void failure(String s) {
+        Log.d(TAG, "Failed to get offers");
       }
 
        });
   }
 ```
 
-OffersCallback returns an Offers list object. The list contains different loan offers that the user has been pre-approved for. These offers range between different interest, APRs and terms. It is up to your development team to determine the offers you want displayed to the user.
+OffersCallback returns an Offers list array of offers. The list contains different loan offers that the user has been pre-approved for. These offers range between different interest, APRs and terms. It is up to your development team to determine the offers you want displayed to the user.
 
 To access a particular offer by index, you can do something like this in the OffersCallback success:
 
 ```
-  @Override                 
+ @Override
     public void success(PMIListedOffers offers) {
-     PMIOffer offer = offers.getOffers().get(0);
-    } 
+        Log.d(TAG, "Got offers");
+
+        // choose the first offer
+        PMIOffer offer = offers.getOffers().get(0);
+        int userSelectedOffer = offer.getLoanOfferId();
+    }
 ```
 
 ###Invoke the Prosper Borrower SDK and complete the loan offer###
@@ -335,12 +440,13 @@ Pre-approved loan offers generated by the Prosper Borrower SDK require user cons
 The Prosper Borrower SDK guides the user through the process, displaying Prosper Marketplace Terms and Conditions and requiring consent and acceptance as part of the user experience. You can invoke the Prosper Borrower SDK when a user selects an offer by registering an intent:
 
 ```
+// start the Prosper SDK with this offer
 Intent prosperIntent = ProsperIntent.getUserInfoProvidedIntent(MainActivity.this, borrowerInfo, userSelectedOffer);
 startActivityForResult(prosperIntent, ProsperActivity.LOAN_APPLICATION_REQUEST);
 ```
 
 
-In the above intent, the userSelectedOffer is the LoanOfferId object, which is the loan offer your user selects from the loan offers list.
+In the above intent, the userSelectedOffer is the LoanOfferId, which is the loan offer your user selects from the loan offers list.
 
 
 #Activity result codes
@@ -385,4 +491,5 @@ Contact us at mobileSDK@prosper.com
 4.1 Indemnification by Integrator of Prosper SDKs.  Integrator shall indemnify, defend and hold Prosper harmless from and against any Claim that is attributable to or arises from (i) Integrator’s violation of any state or Federal law, rule or regulation, or any other illegal or actionable act or omission by or on behalf of Integrator; (ii) Integrator’s breach of any material obligation owed to Prosper; and (iii) any acts or omissions by Integrator, its employees or its agents, in connection with Integrator’s marketing efforts or efforts related to the protection of data privacy or security keys.  Integrator agrees to promptly pay and fully satisfy any and all losses, judgments or expenses, including, without limitation, costs of settlement and attorneys’ fees incurred or sustained, or reasonably likely to be incurred or sustained by Prosper as a result of any claims of the types described above.
 
 4.2 Procedures.  Prosper shall: (i) promptly notify the Integrator in writing of any losses for which Prosper seeks indemnification; (ii) provide reasonable cooperation to the Integrator and its legal representatives in the investigation of any matter which is the subject of indemnification; and (iii) permit Integrator to have full control over the defense and settlement of any matter subject to indemnification; provided, however, that the Integrator shall not enter into any settlement that affects Prosper’s rights or interests without Prosper’s prior written consent, which shall not be unreasonably withheld or delayed.  Prosper shall have the right to participate in the defense at its expense.
+
 
