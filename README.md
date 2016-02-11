@@ -65,9 +65,11 @@ The following screenshots show the flow of the Prosper Borrower SDK on Android. 
 
 ![Prosper Borrower SDK for Android screenshots](https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/AndroidScreenshots.png)
 
-Here's the Prosper Borrower SDK in action on the Android platform.
+<!-- Here's the Prosper Borrower SDK in action on the Android platform.
 
-![Demo] (https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/android.gif)
+![Demo] (https://github.com/prosperllc/Prosper-Android-SDK/blob/master/doc-images/<name_of_video>)
+-->
+
 
 
 # Installing the Prosper Borrower SDK and configuring your project
@@ -229,6 +231,7 @@ To speed up the creation of a loan listing, Prosper can also accept additional i
  * Secondary phone number
  * Employer name
  * Employer phone number
+ * Work phone number
  * Employer start date
  * Occupation type
  * Social security number
@@ -296,7 +299,7 @@ PMIBorrowerInfo borrowerInfo = new PMIBorrowerInfo.PMIBorrowerBuilder()
    .setState("GA")
    .setZip("31313")
    .setDateOfBirth("03/22/1984")
-   .build();
+
    // You can also add ten additional pieces of information to the PMIBorrowerInfo object
    .setPrimaryPhone("4085550175")
    .setSecondaryPhone("4085550235")
@@ -308,6 +311,9 @@ PMIBorrowerInfo borrowerInfo = new PMIBorrowerInfo.PMIBorrowerBuilder()
    .setSsn("123456789")
    .setAccountNumber("32423435345435")
    .setRoutingNumber("121000248")
+   
+   // Build the object
+   .build();
 ```
 
 **Note:** For a full list of values that can be entered for LoanPurpose and EmploymentStatus and Occupation, refer to the ProsperConfig.java file bundled with the Prosper Borrower SDK.
@@ -362,6 +368,7 @@ To speed up the creation of a loan listing, Prosper can also accept additional i
  * Secondary phone number
  * Employer name
  * Employer phone number
+ * Work phone number
  * Employer start date
  * Occupation type
  * Social security number
@@ -387,7 +394,7 @@ PMIBorrowerInfo borrowerInfo = new PMIBorrowerInfo.PMIBorrowerBuilder()
    .setState("GA")
    .setZip("31313")
    .setDateOfBirth("03/22/1984")
-   .build();
+   
    // You can also add ten additional pieces of information to the PMIBorrowerInfo object
    .setPrimaryPhone("4085550175")
    .setSecondaryPhone("4085550235")
@@ -399,6 +406,9 @@ PMIBorrowerInfo borrowerInfo = new PMIBorrowerInfo.PMIBorrowerBuilder()
    .setSsn("123456789")
    .setAccountNumber("32423435345435")
    .setRoutingNumber("121000248")
+   
+   // Build the object
+   .build();
 ```
 **Note:** For a full list of values that can be entered for LoanPurpose, EmploymentStatus and Occupation, refer to the ProsperConfig.java file bundled with the Prosper Borrower SDK.
 
