@@ -25,12 +25,12 @@ android {
         targetSdkVersion 23
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionBuild}"
-        buildConfigField "String", "PROSPER_CLIENT_ID", "\"obtainFromProsper\""
-        buildConfigField "String", "PROSPER_CLIENT_SECRET", "\"obtainFromProsper\""
-        buildConfigField "String", "PROSPER_REF_AC", "\"obtainFromProsper\""
-        buildConfigField "String", "PROSPER_REF_MC", "\"obtainFromProsper\""
+        buildConfigField "String", "PROSPER_CLIENT_ID", "\"obtainFromPropser\""
+        buildConfigField "String", "PROSPER_CLIENT_SECRET", "\"obtainFromPropser\""
+        buildConfigField "String", "PROSPER_REF_AC", "\"obtainFromPropser\""
+        buildConfigField "String", "PROSPER_REF_MC", "\"obtainFromPropser\""
         resValue "string", "google_api_name", "com.google.android.geo.API_KEY"
-        resValue "string", "google_api_key", "obtainFromGoogle"
+        resValue "string", "google_api_key", "yourGoogleAPIKey"
     }
 
     lintOptions {
@@ -61,7 +61,7 @@ repositories {
 }
 dependencies {
     compile 'com.google.android.gms:play-services-location:7.5.0'
-    compile('com.prosper.widget:borrowerwidget:1.0@aar') {
+    compile('com.prosper.widget:borrowerwidget:1.1@aar') {
         transitive = true;
     }
 

@@ -71,6 +71,20 @@ public class MainActivity extends AppCompatActivity {
                                 .setState("GA")
                                 .setZip("31313")
                                 .setDateOfBirth("04/28/1984")
+
+
+                                        /**
+                                         *  Optional fields which you can pass and borrower sdk will pre fill to
+                                         *  make it easier for user to walk through the loan application process
+                                         */
+                                .setPrimaryPhone("4152227890")
+                                .setWorkPhone("4153337890")
+                                .setEmployerName("Test")
+                                .setEmployerPhone("4154447890")
+                                .setEmploymentStart("06/2010")
+                                .setSsn("666470340")
+                                .setBankAccountNumber("8879217277")
+                                .setBankRoutingNumber("121042882")
                                 .build();
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
