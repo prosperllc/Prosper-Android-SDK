@@ -126,7 +126,7 @@ The following screenshots show the flow of the Prosper Borrower SDK on Android. 
 
  ```
   dependencies { 
-     compile (name: 'com.prosper.widget:borrowerwidget:1.0.1@aar') {        
+     compile (name: 'com.prosper.widget:borrowerwidget:1.1@aar') {        
      transitive = true;     
     }  
  }   
